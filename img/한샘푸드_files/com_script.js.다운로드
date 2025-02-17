@@ -1,0 +1,433 @@
+	$(document).ready(function() { 
+	
+        //input을 datepicker로 선언
+		$(".Txt_date").datepicker({
+        	dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "/pub/img/icons/calendar_add.gif" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+			,nextText: '다음 달' // next 아이콘의 툴팁.
+			,prevText: '이전 달' // prev 아이콘의 툴팁.
+			,showButtonPanel:true // 캘린더 하단에 버튼 패널을 표시한다(오늘날짜로이동버튼, 닫기버튼).
+		    ,currentText: '오늘' // 오늘날짜로이동되는 버튼의 텍스트 변경 
+		    ,showAnim: "slideDown" //애니메이션을 적용한다.
+		    ,closeText: '닫기'  // 닫기버튼의 텍스트 변경
+		});                    
+          
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
+		$("img.ui-datepicker-trigger").attr("style", "margin-left:2px; vertical-align:middle; padding-bottom:3px; cursor: Pointer;");
+		
+		
+	    //input을 datepicker로 선언
+	    $(".Txt_date2").datepicker({
+	    	dateFormat: 'yymmdd' //Input Display Format 변경
+	        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+	        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+	        ,changeYear: true //콤보박스에서 년 선택 가능
+	        ,changeMonth: true //콤보박스에서 월 선택 가능                
+	        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+	        ,buttonImage: "/pub/img/icons/calendar_add.gif" //버튼 이미지 경로
+	        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+	        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+	        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+	        ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
+	        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+	        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+	        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+			,nextText: '다음 달' // next 아이콘의 툴팁.
+			,prevText: '이전 달' // prev 아이콘의 툴팁.
+			,showButtonPanel:true // 캘린더 하단에 버튼 패널을 표시한다(오늘날짜로이동버튼, 닫기버튼).
+		    ,currentText: '오늘' // 오늘날짜로이동되는 버튼의 텍스트 변경 
+		    ,showAnim: "slideDown" //애니메이션을 적용한다.
+		    ,closeText: '닫기'  // 닫기버튼의 텍스트 변경
+		});                    
+          
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
+		$("img.ui-datepicker-trigger").attr("style", "margin-left:2px; vertical-align:middle; padding-bottom:3px; cursor: Pointer;");
+		
+		//$(document).on("click", ".Txt_date3", function(){
+		$(".Txt_date3").monthpicker({
+        	monthNames: ['1월(JAN)', '2월(FEB)', '3월(MAR)', '4월(APR)', '5월(MAY)', '6월(JUN)','7월(JUL)', '8월(AUG)', '9월(SEP)', '10월(OCT)', '11월(NOV)', '12월(DEC)'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOn: "both",
+            buttonImage: "/pub/img/icons/calendar_add.gif",
+            buttonImageOnly: true,
+            changeYear: false,
+            yearRange: 'c-2:c+2',
+            dateFormat: 'yy-mm'
+      	});
+      	
+		$("img.ui-monthpicker-trigger").attr("style", "margin-left:2px; vertical-align:middle; padding-bottom:0px; cursor: Pointer;");
+		
+		$(".Txt_date4").datepicker({
+        	dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+			,nextText: '다음 달' // next 아이콘의 툴팁.
+			,prevText: '이전 달' // prev 아이콘의 툴팁.
+			,showButtonPanel:true // 캘린더 하단에 버튼 패널을 표시한다(오늘날짜로이동버튼, 닫기버튼).
+		    ,currentText: '오늘' // 오늘날짜로이동되는 버튼의 텍스트 변경 
+		    ,showAnim: "slideDown" //애니메이션을 적용한다.
+		    ,closeText: '닫기'  // 닫기버튼의 텍스트 변경
+		});         
+		  
+	    $.fn.cal_clean = function(obj) {
+	        $("#"+obj).val("");
+	    };
+	    $.fn.cal_set = function(obj1,obj2,sdate,edate) {
+	    	$("#"+obj1).val(sdate);
+	    	$("#"+obj2).val(edate);
+		};
+		fnc_menu = function(str_menu,str_path) {
+			$(location).attr("href", "/admincenter/comm/comm_return_url.php?str_menu="+str_menu+"&str_path="+escape(str_path));
+		};
+		$(".class_img").change(function(){
+		    if($(this).val() != ""){
+		    	if($(this).attr("val1") == "1"){	
+	            	var ext = $(this).val().split(".").pop().toLowerCase();
+		            if($.inArray(ext, ["gif","jpg","jpeg","png"]) == -1){
+		                alert("gif, jpg, jpeg, png 파일만 업로드 해주세요.");
+		                $(this).val("");
+		                return;
+		            }
+		       	} else if($(this).attr("val1") == "2"){	
+	            	var ext = $(this).val().split(".").pop().toLowerCase();
+		            if($.inArray(ext, ["asp","php","jsp","cig"]) != -1){
+		                alert("asp, php, jsp, cgi 파일은 업로드 할수 없습니다.");
+		                $(this).val("");
+		                return;
+		            }
+		       	} else if($(this).attr("val1") == "3"){	
+	            	var ext = $(this).val().split(".").pop().toLowerCase();
+		            if($.inArray(ext, ["csv"]) == -1){
+		                alert("csv 파일로 업로드 해주세요.");
+		                $(this).val("");
+		                return;
+		            }
+		       	} else if($(this).attr("val1") == "4"){	
+	            	var ext = $(this).val().split(".").pop().toLowerCase();
+		            if($.inArray(ext, ["xlsx"]) == -1){
+		                alert("xlsx 파일로 업로드 해주세요.");
+		                $(this).val("");
+		                return;
+		            }			       	
+		       	} else if($(this).attr("val1") == "5"){	
+	            	var ext = $(this).val().split(".").pop().toLowerCase();
+		            if($.inArray(ext, ["xls"]) == -1){
+		                alert("xls 파일로 업로드 해주세요.");
+		                $(this).val("");
+		                return;
+		            }		
+		       	}
+		       	if($(this).attr("val2") != ""){	
+		            var fileSize = this.files[0].size;
+		            var maxSize = 1024 * 1024 * parseInt($(this).attr("val2"));
+		            if(fileSize > maxSize){
+		                alert("파일용량 "+$(this).attr("val2")+"MB을 초과했습니다.");
+		                $(this).val("");
+		            }
+		    	}
+		    }
+		});
+		$.comma = function(str){
+    		str = String(str);
+    		return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+		}
+		$(document).on("click", ".intprice", function(){
+			$('.intprice').number( true, 0 );
+		});
+		$('.intprice').number( true,0);
+		$(document).on("change", ".intprice", function(){
+			console.log('Change event.');
+			var val = $(this).val();
+		});
+		$(document).on("click", ".decprice", function(){
+			$('.decprice').number( true, 2 );
+		});
+		$(document).on("change", ".decprice", function(){
+			console.log('Change event.');
+			var val = $(this).val();
+		});
+		$('.intnum').number( true,0,',','' );
+
+		//$(document).on("keypress", ".sintnum", function(event){
+		//	if (event.which && (event.which <= 47 || event.which >= 58) && event.which != 8) {event.preventDefault();}
+		$(document).on("keyup", ".sintnum", function(){
+			$(this).val($(this).val().replace(/[^0-9]/g,""));
+		});
+
+		$('.numOnly').on('input', function() {
+		  digit.masking($(this).val());
+		  digit.setTo(this);
+		
+		  //$origin.text(digit.origin);
+		  //$masked.text(digit.masked);  
+		  
+		});
+		$(document).on("click", "#btn_menuCon", function(event){
+			var file = $(location).attr('pathname');
+			console.log(file);
+			if ($.cookie(file)=="1") {
+				$.cookie(file, '0');
+			} else {
+				$.cookie(file, '1');
+			}
+			
+			
+			$.MenuCon();	
+		});
+		
+		$.MenuCon = function(str){
+			if($(".search-tb").length) {
+				if($("#btn_menuCon").length) {
+					console.log($.cookie(file));
+					var file = $(location).attr('pathname');
+					
+					if ($.cookie(file)=="1") {
+						$(".bd-saerch").hide();
+						$("#arrow").attr("src", "/admincenter/img/ic_arrow_drop_down_black_18dp.png");
+					} else {
+						$(".bd-saerch").show();
+						$("#arrow").attr("src", "/admincenter/img/ic_arrow_drop_up_black_18dp.png");
+					}
+
+				}
+			}
+		}
+		$.MenuCon();
+		
+        //숫자만
+		$(document).on("keyup", ".onNum", function(event){
+			$(this).val(numberFormat($(this).val(), true, true, false));
+		});
+
+
+	});
+	
+	$(function(){
+
+	/*첨부파일*/
+	var $btn_addfile = $(".btn-addfile");
+	$btn_addfile.on("click", function(){
+		var $addfile_box =$(this).parents(".add-file");
+		var $file = $addfile_box.find("input:file");
+		var $txt = $addfile_box.find("input:text");
+		$file.click();
+		$file.on("change", function(){
+			var val = $(this).val();
+			$txt.val(val);
+		});
+	});
+	
+		
+	}); 
+	
+	
+	var digit = new Digit();
+	var $origin = $('#origin');
+	var $masked = $('#masked');
+	var $length = $('#length');
+	
+	//------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------
+	function Digit() {
+	  this.origin = '';
+	  this.masked = '';
+	  this.prevLength = 0; 
+	} 
+	
+	Digit.prototype.masking = function(value) {  
+	  value = this.fixDigit(value);
+	  var masking = /(\d)(?=(\d\d\d)+(?!\d))/g;
+	  this.origin = value;
+	  this.masked = value.replace(masking, '$1,');
+	  this.prevLength = this.origin.length;
+	  return this.masked; 
+	};
+	
+	Digit.prototype.fixDigit = function(value) {
+	  value = value.replace(/[^0-9]/g, '');
+	  if (value.length - this.prevLength > 2) {
+	      value = value.substring(this.prevLength, value.length);
+	  }
+	  return value;
+	};
+	
+	Digit.prototype.fixCursor = function (elem) {
+	  var self = this;
+	  setTimeout(function() {
+	    if(elem.setSelectionRange !== undefined) {
+	      elem.setSelectionRange(self.masked.length, self.masked.length);
+	    } else {
+	      $(elem).val(elem.value);
+	    }    
+	  }, 0);
+	};
+	
+	Digit.prototype.setTo = function(elem) {
+	  $(elem).val(this.masked);
+	  this.fixCursor(elem);
+	};
+	
+	
+	function input_comma(sfield) {
+		if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || (event.keyCode == 188) || (event.keyCode == 190) || (event.keyCode == 110) || (event.keyCode == 8) || (event.keyCode == 46)) {			
+			sfield.value = remove_comma(sfield);
+			money = sfield.value;
+			var tmpH="";
+			if(money.charAt(0)=="-") {
+				tmpH=money.substring(0,1);
+				money=money.substring(1,money.length);
+			}
+			
+			for (; money.indexOf("-") != -1 ;) { 
+				money = money.replace("-","")
+			}
+		
+			belowzero = "";
+			if (check_dot(money)==true) {
+				arr = money.split(".");
+				money = arr[0];		
+				belowzero = "." + arr[1];    
+			}
+			
+			len = money.length ;
+			result ="";
+			for (i=0; i < len;i++) {
+				comma="";
+				schar = money.charAt(i);
+				where = len - 1 - i;
+				if ( ( where % 3 == 0) && (len > 3) && ( where != 0 )) 
+				{
+					comma = ",";	
+				}
+				result = result +   schar + comma ;
+			}
+			if(tmpH) {
+				result = tmpH + result;
+			}
+			sfield.value = result + belowzero;			
+		}	
+		return true;
+	}
+	function remove_comma(sfield) {
+		money = sfield.value;
+		var arr;
+		arr = money.split(",");
+		len = arr.length;	
+		result = "";
+		for (k=0; k < len; k++) {
+			result = result + arr[k];
+		}
+		return result;
+	}	
+	function check_dot(v_value) {
+		v_len= v_value.length;
+		for (var i=0; i< v_len; i++) {
+			schar = v_value.charAt(i);
+			if (schar == "." )
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	function onlyNumber() { 
+		if ( ((event.keyCode < 48) || (57 < event.keyCode) && (188 != event.keyCode)) && (45 != event.keyCode) && (190 != event.keyCode) && (110 != event.keyCode) && (109 != event.keyCode) && (46 != event.keyCode)) {
+			event.returnValue=false;
+		}
+	}
+	
+	
+	//숫자 입력 (마이너스, 소수점, 콤마)
+	function numberFormat(val, isMinus, isFloat, isComma){
+		var str = val;
+		//일단 마이너스, 소수점을 제외한 문자열 모두 제거
+		str = str.replace(/[^-\.0-9]/g, '');
+		//마이너스
+		if(isMinus){
+			str = chgMinusFormat(str);   
+		} else {
+			str = str.replace('-','');
+		}
+	  
+		//소수점
+		if(isFloat){
+			str = chgFloatFormat(str);       
+		} else {
+			if(!isMinus ){
+				str = str.replace('-','');
+			}
+			str = str.replace('.','');
+			if(str.length>1){
+				str = Math.floor(str);
+				str = String(str);
+			}
+		}
+	  
+		//콤마처리
+		if(isComma){
+			var parts = str.toString().split('.');
+			if(str.substring(str.length - 1, str.length)=='.'){
+				str = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,",") +".";
+			} else {
+				str = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,",") + (parts[1] ? "." + parts[1] : "");
+			}
+		}
+		return str;
+	}
+	
+	function chgFloatFormat(str){
+		var idx = str.indexOf('.');  
+		if(idx<0){  
+			return str;
+		} else if(idx>0){
+			var tmpStr = str.substr(idx+1);    
+			if(tmpStr.length>1){             
+				if(tmpStr.indexOf('.')>=0){        
+					tmpStr =  tmpStr.replace(/[^\d]+/g, '');                  
+					str = str.substr(0,idx+1) + tmpStr;
+				}
+			}    
+		} else if(idx==0){
+			str = '0'+str;
+		}
+		return str;  
+	}
+	  
+	function chgMinusFormat(str){
+		var idx = str.indexOf('-');
+		if(idx==0){
+			var tmpStr = str.substr(idx+1);
+			//뒤에 마이너스가 또 있는지 확인
+			if(tmpStr.indexOf('-')>=0){
+				tmpStr = tmpStr.replace('-','');
+				str = str.substr(0,idx+1) + tmpStr;  
+			}
+		} else if(idx>0){
+			str = str.replace('-','');
+		} else if(idx<0){
+			return str;
+		}
+	    return str;
+	}

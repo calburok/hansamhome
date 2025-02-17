@@ -1,0 +1,607 @@
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var filter = "win16|win32|win64|mac|macintel";
+var mobileIs = false;
+
+if (navigator.platform) {
+    if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+        mobileIs = true;
+    }
+}
+
+$(document).ready(function() {
+	
+});
+
+
+$(window).on("load", function () {
+
+    //공통 적용
+
+    // 타이틀
+    let subTitle = document.querySelector('.sub-title');
+    ScrollTrigger.create({
+        trigger: subTitle,  
+        start: "top 60%",  
+        onEnter: function(){
+            $(subTitle).addClass('active');
+        }
+    });
+
+    // 공지사항
+    let noticeList = gsap.utils.toArray(".notice .list .tr");
+    noticeList.forEach((item, i) => {
+        ScrollTrigger.create({
+            trigger: item,  
+            start: "top 95%",  
+            onEnter: function(){
+                $(item).addClass('active');
+            }
+        });
+    });
+
+    // 스토리
+    let storyList = gsap.utils.toArray(".story .list li");
+    storyList.forEach((item, i) => {
+        ScrollTrigger.create({
+            trigger: item,  
+            start: "top 95%",  
+            onEnter: function(){
+                $(item).addClass('active');
+            }
+        });
+    });
+
+    // 공통 active
+    let anitarget = gsap.utils.toArray('.ani-target');
+    anitarget.forEach(function(el){
+        ScrollTrigger.create({
+            trigger : el,
+            start : "top 80%",
+            onEnter: function(){
+                $(el).addClass('active');
+            },
+        });
+    });
+
+});
+
+
+$(function () {
+
+    
+
+    // select-box 
+    let $selectBox = $('.select-box');
+    $selectBox.find('.select-tit').on('click',function(){
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')){
+            $(this).siblings('.option-box').stop().slideDown();
+        } else {
+            $(this).siblings('.option-box').stop().slideUp();
+        }
+    });
+    $selectBox.find('.option-box li').on('click',function(){
+        let box = $(this).parents('.select-box');
+        let tit = box.find('.select-tit');
+
+        $(this).siblings().removeClass('checked');
+        $(this).addClass('checked');
+
+        tit.text($(this).text());
+        tit.removeClass('active');
+        box.find('select option').eq($(this).index()).prop('selected',true);
+
+        $(this).parents('.option-box').slideUp();
+    });
+
+    // 첨부파일
+    let $attachBox = $('.attach-box');
+    $attachBox.find('input').on('change',function(){
+        let parent = $(this).parents('.attach-box');
+        let name = parent.find('.file-name');
+
+        let fileName = $(this).val().split("\\");
+        name.text(fileName[fileName.length - 1]);
+    });
+
+
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    // accordion
+    let $faqHead = $('.accordion-item .accordion-btn');
+    //$faqHead.on('click',function(){
+	$(document).on("click", ".accordion-btn", function(){
+        let parent = $(this).parent('.accordion-item');
+        parent.toggleClass('open');
+        if(parent.hasClass('open')){
+            parent.find('.accordion-cont').slideDown();
+        } else {
+            parent.find('.accordion-cont').slideUp();
+        }
+    });
+
+
+    
+
+  
+    // company
+    if($('.sub.company').length > 0){
+        // service
+        
+        let textItem = gsap.utils.toArray('.company .service .text-box');
+
+        let sec02Img = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.company .sec02',
+                start: 'top 20%',
+                end: '75% bottom',
+                scrub : 0.5,
+            }
+        });
+        gsap.to('.company .sec02 .text-box-wrap .bg', 
+            {
+                opacity:0.5,
+                scrollTrigger:{
+                    trigger: '.company .sec02',
+                    start: '75% bottom',
+                    end: '85% bottom',
+                    scrub : 0.8,
+                    onEnterBack: function(){
+                        $('.company .sec02 .text-box-wrap').removeClass('active');
+                    },
+                    onLeave: function(){
+                        $('.company .sec02 .text-box-wrap').addClass('active');
+                    }
+                }
+            }
+        )
+
+        ScrollTrigger.matchMedia({
+            '(min-width:1025px)': function(){ // 1025이상
+                /** s:sec02 **/
+                sec02Img.fromTo('.company .sec02 .img-left span',
+                    {clipPath: "inset(95% 95% 0% 0% round 0px calc((1 - 0) * 50px * 2) 0px 0px)"},
+                    {clipPath: "inset(0% 49% 0% 0% round 0px calc((1 - 1) * 50px * 2) 0px 0px)"},
+                    'start'
+                )
+                sec02Img.fromTo('.company .sec02 .img-right span',
+                    {clipPath: "inset(95% 0% 0% 95% round calc((1 - 0) * var(--gap-50) * 2) 0px 0px 0px)"},
+                    {clipPath: "inset(0% 0% 0% 49% round calc((1 - 1) * var(--gap-50) * 2) 0px 0px 0px)"} ,'start'
+                )
+                /** e:sec02 **/
+            },
+            '(max-width:1025px)':function(){ // 1024 이하
+                sec02Img.fromTo('.company .sec02 .img-left span',
+                    {clipPath: "inset(70% 70% 0% 0% round 0px calc((1 - 0) * 50px * 2) 0px 0px)"},
+                    {clipPath: "inset(0% 0% 0% 0% round 0px calc((1 - 1) * 50px * 2) 0px 0px)"},
+                    'start'
+                )
+            },
+            '(min-width:769px)' : function(){ // 769이상
+                ScrollTrigger.create({
+                    trigger: '.company .service .img-area',  
+                    endTrigger: '.company .service',
+                    start: "top top",  
+                    end : 'bottom bottom',
+                    pin: true,  
+                    pinSpacing: false  
+                });
+                gsap.fromTo('.company .service .img-item.item02', 
+                    {
+                        x:'125%', y:'19%', rotate:'37deg'
+                    },
+                    {
+                        x:'0%', y:'0%', rotate:'0deg',
+                        scrollTrigger:{
+                            trigger: '.company .service .text-box.box2',
+                            start: 'top 20%',
+                            end: 'top 10%',
+                            scrub : 0.8,
+                        }
+                    }
+                )
+            },
+            '(max-width:768px)': function(){ // 768 이하
+                // gsap.to(textItem, {
+                //     x : () => `-${window.innerWidth*0.9}`,
+                //     ease : "none",
+                //     scrollTrigger : {
+                //         trigger : ".company .service .service-wrap",
+                //         pin : true,
+                //         scrub : 1,
+                //     } 
+                // });
+                // gsap.fromTo('.company .service .img-item.item02', 
+                //     {
+                //         x:'125%', y:'19%', rotate:'37deg'
+                //     },
+                //     {
+                //         x:'0%', y:'0%', rotate:'0deg',
+                //         scrollTrigger:{
+                //             trigger: ".company .service",
+                //             start: '10% top',
+                //             end: '50%',
+                //             scrub : 0.5,
+                //         }
+                //     }
+                // )
+            }
+        })
+
+        // location
+        ScrollTrigger.create({
+            trigger: '.company .location',  
+            start: "top 80%",  
+            onEnter: function(){
+                $('.location').addClass('active');
+            } 
+        });
+    }
+    
+
+    // management
+    if($('.sub.manage').length > 0){
+        let sec02Img = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.manage .sec02',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub : 2.5,
+                refreshPriority: -1
+            }
+        });
+        sec02Img.fromTo(
+            '.manage .sec02 .parallax',
+            {y:'-52%'},
+            {
+                y:'-48%',
+                ease: "none"
+            }
+            
+        )
+        ScrollTrigger.create({
+            trigger: '.manage .sec04',  
+            start: "top 80%",  
+            onEnter: function(){
+                $('.manage .sec04').addClass('active');
+            } 
+        });
+        ScrollTrigger.matchMedia({
+            '(max-width:768px)': function(){
+                let textbox = gsap.utils.toArray('.manage .sec01 .list-item');
+                textbox.forEach(function(el, idx){
+                    ScrollTrigger.create({
+                        trigger : el,
+                        start : "top 80%",
+                        onEnter: function(){
+                            $(el).addClass('active');
+                        },
+                    });
+                })
+            }
+        });
+    }
+
+    // food
+    if($('.sub.food').length > 0){
+        let item = $('.food .sec01 .item');
+        item.on('mouseenter',function(){
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+        }); 
+
+
+        let $imgbox = $('.food .sec02 .slide-box .slide-item');
+        let pos = (window.innerHeight - $imgbox.height())/2;
+        let textItem = gsap.utils.toArray('.food .sec02 .text-item');
+
+        ScrollTrigger.matchMedia({
+            '(min-width:769px)': function(){ // 769이상
+                /** s:sec02 **/
+                gsap.set('.food .sec02', {'padding-bottom':`${pos}px`})
+                ScrollTrigger.create({
+                    trigger : '.food .sec02 .bg',
+                    endTrigger: '.food .sec02',
+                    start : "top top",
+                    end: "bottom bottom",
+                    pin : true,
+                });
+                ScrollTrigger.create({
+                    trigger : '.food .sec02-cont .img-area',
+                    endTrigger: '.food .sec02',
+                    start : `top ${pos}px`,
+                    end: "bottom bottom",
+                    pin : true,
+                });
+                textItem.forEach(function(el){
+                    ScrollTrigger.create({
+                        trigger : el,
+                        start : "top 50%",
+                        end: "bottom 50%",
+                        onEnter: function(){
+                            let idx = $(el).index();
+                            $sec02Slide.slick('slickGoTo',idx);
+                        },
+                        onEnterBack: function(){
+                            let idx = $(el).index();
+                            $sec02Slide.slick('slickGoTo',idx);
+                        }
+                    });
+                });
+                /** e:sec02 **/
+            },
+        })
+
+        let $sec02Slide = $('.food .sec02 .slide-box').slick({
+            slidesToShow : 1,
+            vertical:true,
+            arrows:false,
+            dots:false,
+            infinite : false,
+        });
+       
+    }
+
+    if($('.sub.catering').length > 0){
+
+        // s:sec01
+        let pathItem = gsap.utils.toArray('.catering .sec01 .item .circle-box path');
+        let arcTl = gsap.timeline({
+            scrollTrigger:{
+                trigger:'.catering .sec01 .sec01-cont',
+                start : `top 80%`,
+            }
+        });
+        pathItem.forEach(function(el,idx){
+            arcTl.to(el, { onStart:function(){arcDrawing(el);} }, `<+=0.1` ) 
+        });
+        // e:sec01
+        // s:sec02
+        let holMove = gsap.timeline({
+            scrollTrigger:{
+                trigger : '.catering .sec04',
+                start : "top bottom",
+                end: "bottom top",
+                scrub : 1,
+                ease : "none",
+            }
+        });
+        holMove.fromTo(
+            '.catering .sec04 .sec04-wrap',
+            {x:"-50%"},
+            {x:"-70%"}
+        )
+        // e:sec02
+        // s:sec05
+        let scrollItem = gsap.utils.toArray('.scroll-item');
+        let maxWidth = 0;
+        const getMaxWidth = () => {
+            maxWidth = 0;
+            scrollItem.forEach((items) => {
+                maxWidth += items.offsetWidth;
+            });
+        
+            let margin = window.innerWidth > 1920 ? 1920 : window.innerWidth*0.9;
+            maxWidth = maxWidth - margin;
+        };
+        getMaxWidth();
+        ScrollTrigger.matchMedia({
+            "(min-width : 769px)" : function(){
+                gsap.to(scrollItem, {
+                    x : () => `-${maxWidth}`,
+                    ease : "none",
+                    scrollTrigger : {
+                        trigger : ".sec05-scroll-wrap",
+                        start: "top 20%",
+                        pin : true,
+                        scrub : 1,
+                    }
+                });
+            }
+        });	
+        // e:sec05
+        // s:sec06 
+        ScrollTrigger.create({
+            trigger : '.sec06',
+            start : "top 80%",
+            onEnter: function(){
+                $('.sec06').addClass('active');
+            },
+        });
+
+    }
+
+    if($('.sub.franchise').length > 0){
+        // s:sec01
+        let sec01Item = gsap.utils.toArray('.franchise .sec01-list .list-item');
+        ScrollTrigger.create({
+            trigger: '.franchise .sec01-list',
+            start: `top top`,
+            pin:true,
+            end: `+=${window.innerHeight*4}`,
+            invalidateOnRefresh: true,
+        });
+        ScrollTrigger.create({
+            trigger: '.franchise .sec01',
+            start: `top top`,
+            onEnter:function(){
+                $('.franchise .sec01 .list-outer').addClass('active');
+            },
+            onLeaveBack:function(){
+                $('.franchise .sec01 .list-outer').removeClass('active');
+            }
+        });
+        sec01Item.forEach(function(el,idx){
+            ScrollTrigger.create({
+                trigger: el,
+                start: `top top`,
+                onEnter:function(){
+                    $(el).siblings().removeClass('active');
+                    $(el).addClass('active');
+                },
+                onEnterBack:function(){
+                    $(el).siblings().removeClass('active');
+                    $(el).addClass('active');
+                }
+            });
+        });
+        // e:sec01
+
+        gsap.to(".franchise .sec02 .img-box", {
+            scrollTrigger:{
+                trigger: ".franchise .sec02",
+                start:"top 60%",
+            },
+            duration:1.2,
+            ease : "power2.out",
+            "--mask-percent":"0%",
+        })
+    }
+
+    if($('.sub.business').length > 0){
+        // cards-box 
+        let $process = $('.business .cards-box');
+        let itemNum = $('.process-item .item-box').length + 1;
+        let $processH = $process.height();
+        let $tabBtn = $process.find('.tab-btn');
+
+        let startPo = window.innerWidth > 768 ? (window.innerHeight - $processH)/2 - $('header').height() : 75;
+
+        let processTl = gsap.timeline({
+            scrollTrigger:{
+                trigger:'.business .cards-box .pin-box',
+                pin: !0,
+                start : `top ${startPo}`,
+                end : '+=' + itemNum*$processH,
+                scrub: 0.5,
+            }
+        });
+
+        let processitem = gsap.utils.toArray('.business .process-item .item-box');
+        processitem.forEach(function(el,idx){
+            processTl.to(el, { y:'0%',}, "<0.01")
+                     .addLabel(`step${idx}`)
+                     .to(el, { scale: 1 - 0.05*(5 - idx)}, ">-0.01");
+        });
+
+        $tabBtn.on('click',function(){
+            let percent  = (processTl.labels['step' + $(this).index()]) / processTl.totalDuration();
+
+            let pos = $processH*itemNum * percent;
+            let pos2 = $process.offset().top + pos - startPo;
+
+            window.scrollTo({top:pos2, behavior:"smooth"});
+        });
+
+        $(window).scroll(function(){
+            let scT = $(window).scrollTop();
+
+            $tabBtn.each(function(idx, el){
+                let percent  = (processTl.labels['step' + idx] - 0.2) / processTl.totalDuration();
+                let pos = $processH*itemNum * percent;
+                let pos2 = $process.offset().top + pos - startPo;
+
+                if(pos2 <= scT){
+                    $tabBtn.removeClass('active');
+                    $tabBtn.eq(idx).addClass('active');
+                }
+            })
+            
+        });
+    }
+
+    if($('.sub.special').length > 0){
+        // s:sec04
+        let holMoveleft = gsap.timeline({
+            scrollTrigger:{
+                trigger : '.special .sec03',
+                start : "top bottom",
+                end: "+=50%",
+                scrub : 1,
+                ease : "none",
+            }
+        });
+        holMoveleft.fromTo(
+            '.special .sec03 .lft-tit',
+            {x:"-40%"},
+            {x:"0%"}
+        )
+        let holMoveright = gsap.timeline({
+            scrollTrigger:{
+                trigger : '.special .sec03',
+                start : "top bottom",
+                end: "+=50%",
+                scrub : 1,
+                ease : "none",
+            }
+        });
+        holMoveright.fromTo(
+            '.special .sec03 .rit-tit',
+            {x:"40%"},
+            {x:"0%"}
+        )
+        // e:sec04
+    }
+    
+    
+    window.addEventListener("resize", ScrollTrigger.update);
+
+    
+});
+
+// modal popup
+function modalOpen(name){
+    let $modal = $(`.modal-popup[data-modal="${name}"]`);
+    $modal.show();
+
+    $('#wrap').append(`<div class="backdrop"></div>`);
+}
+
+function modalClose(elthis){
+    $(elthis).parents('.modal-popup').hide();
+    $('.backdrop').remove();
+}
+
+// 원호 그리기
+let RAD = Math.PI / 180;
+let PI_2 = Math.PI / 2;
+let getPath = function(cx, cy, r, start, end) {
+    var d = end - start;
+    if (360 === d)
+      	return "M " + (cx - r) + " " + cy + " a " + r + " " + r + " 0 1 0 " + 2 * r + " 0 a " + r + " " + r + " 0 1 0 " + 2 * -r + " 0z";
+
+    var o = d > 180 ? 1 : 0;
+
+    return start = start * RAD - PI_2, 
+		   end = end * RAD - PI_2, 
+		   "M " + (cx + r * Math.cos(end)) + " " + (cy + r * Math.sin(end)) + " A " + r + " " + r + " 0 " + o + " 0 " + (cx + r * Math.cos(start)) + " " + (cy + r * Math.sin(start)) + " L " + cx + " " + cy + "z"
+}
+
+function arcDrawing(el){
+    let arc = el;
+    let degreeNum = 0;
+    let raf;
+    let svgBox = $(el).parents('.svg-box');
+    let num = svgBox.width()/2
+
+
+    function arcFrame(){
+
+        degreeNum +=10;
+        arc.setAttribute('d', getPath(num,num,num,0,degreeNum));
+
+        if(degreeNum >= 360){
+            $(el).parents('.item').addClass('active');
+            svgBox.remove();
+            cancelAnimationFrame(raf);
+            return;
+        }
+        raf = requestAnimationFrame(arcFrame);
+    }
+    requestAnimationFrame(arcFrame);
+}
+

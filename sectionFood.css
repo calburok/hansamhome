@@ -1,0 +1,102 @@
+.food {
+  max-width: var(--max-w);
+  height: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+}
+.text__layout1 {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+}
+.text__layout2 {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+}
+.text__layout3 {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+}
+
+@font-face {
+  font-family: "NanumSquareNeoExtraBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+      format("truetype");
+}
+.food__text {
+  font-size: 80px;
+  color: var(--main-color);
+  font-family: "NanumSquareNeoExtraBold";
+}
+
+.img__food > img {
+  width: 125px;
+}
+
+.img__egg {
+  width: 140px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.star__green {
+  color: #45b035;
+}
+
+.star__orange {
+  color: #ea580a;
+}
+
+.star__yellow {
+  color: #fbd234;
+}
+
+.big__star {
+  font-size: var(--font-72);
+}
+
+.small__star {
+  font-size: var(--font-40);
+}
+
+.food > i {
+  position: absolute;
+}
+
+.star1 {
+  top: 180px;
+  left: 30px;
+}
+.star2 {
+  right: 350px;
+  bottom: 100px;
+}
+.star3 {
+  top: 30px;
+  right: 100px;
+}
+.star4 {
+  top: 20px;
+  left: 320px;
+}
+.star5 {
+  top: 400px;
+  right: 0px;
+}
+.star6 {
+  left: 150px;
+  bottom: 130px;
+}

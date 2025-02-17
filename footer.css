@@ -1,0 +1,91 @@
+footer {
+  max-width: 1440px;
+  color: var(--main-color);
+  margin: 0 auto;
+}
+
+.footerWrap {
+  width: 100%;
+  display: flex;
+
+}
+
+.footerLeft {
+
+  max-width: 1040px;
+  width: 100%;
+  border-radius: 24px;
+  background-color: #E6E9BF;
+
+}
+
+.footerRight {
+  max-width: 360px;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.leftTop {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+
+.leftTop > h1 {
+  font-size: 24px;
+  margin: 50px;
+  line-height: 35px;
+  color: var(--main-color);
+}
+
+.toplayout {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.rightTop {
+  display: flex;
+  gap: 30px;
+}
+
+.bottomText {
+  width: 90%;
+  display: flex;
+  font-size: 14px;
+  margin: 0px 50px 30px 50px;
+  font-weight:  500;
+  color: var(--light-green);
+  justify-content: space-between;
+}
+.bottom__p {
+  line-height: 30px;
+}
+.leftTop> .ani__button  {
+  margin: -50px 50px 80px 50px;
+ }
+.bottomText > div{
+font-weight: 900;
+color: var(--main-color);
+}
+.ulLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 900;
+}
+
+.lifirst {
+margin: 50px 0px 30px 0px;
+}
+.lifirst1 {
+  margin: 50px 0px 13px 0px;
+  }
+.ulright {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 700;
+} 

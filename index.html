@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한샘푸드</title>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/common/reset.css" />
+    <!-- 리셋 css 무조건 맨 위에 있어야함 -->
+    <link rel="stylesheet" href="root/root.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="swiper.css" />
+    <link rel="stylesheet" href="banner.css" />
+    <link rel="stylesheet" href="sectionFood.css" />
+    <link rel="stylesheet" href="sectionService.css" />
+    <link rel="stylesheet" href="sectionSpring.css" />
+    <link rel="stylesheet" href="sectionNumberFood.css" />
+    <link rel="stylesheet" href="sectionConfident.css" />
+    <link rel="stylesheet" href="sectionImgSequence.css" />
+    <link rel="stylesheet" href="sectionMultipleSwiper.css">
+    <link rel="stylesheet" href="sectionCard__door.css">
+    <link rel="stylesheet" href="footer.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href class="nav__logo"><img src="/img/logo.png" alt="" /></a>
+
+        <div class="gnb__wrab">
+          <ul class="gnb__box">
+            <li class="gnb">
+              <a href="">
+                <div class="text__ani link__box">
+                  <div>한샘푸드</div>
+                  <div class="duplicate">한샘푸드</div>
+                </div>
+              </a>
+              <div class="snbwrap"></div>
+            </li>
+
+            <li class="gnb">
+              <a href="">
+                <div class="text__ani link__box">
+                  <div>운영관리</div>
+                  <div class="duplicate">운영관리</div>
+                </div>
+              </a>
+              <div class="snbwrap"></div>
+            </li>
+
+            <li class="gnb">
+              <a href="">
+                <div class="text__ani link__box">
+                  <div>사업영역</div>
+                  <div class="duplicate">사업영역</div>
+                </div>
+              </a>
+              <div class="snbwrap"></div>
+            </li>
+
+            <li class="gnb">
+              <a href="">
+                <div class="text__ani link__box">
+                  <div>공지사항</div>
+                  <div class="duplicate">공지사항</div>
+                </div>
+              </a>
+              <div class="snbwrap"></div>
+            </li>
+
+            <li class="gnb">
+              <a href="">
+                <div class="text__ani link__box">
+                  <div>한샘스토리</div>
+                  <div class="duplicate">한샘스토리</div>
+                </div>
+              </a>
+              <div class="snbwrap"></div>
+            </li>
+          </ul>
+        </div>
+
+        <a href class="ani__button">
+          <div class="text__ani2 link__box">
+            <div>온라인 문의</div>
+            <div class="duplicatebtn">온라인 문의</div>
+          </div>
+        </a>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="/img/배너1.png" alt="" class="banner__img1" />
+            <div class="blur"></div>
+            <h1 class="swiper__text">
+              안전한 관리, 균형 잡힌 식단 <br />한샘푸드가 함께합니다.
+            </h1>
+            <div class="ani__button bannerbtn">
+              <div class="text__ani2 link__box">
+                <div>자세히 보기</div>
+                <div class="duplicatebtn">자세히 보기</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/img/배너2.png" alt="" class="banner__img2" />
+            <div class="blur"></div>
+            <h1 class="swiper__text">
+              안전한 관리, 균형 잡힌 식단 <br />한샘푸드가 함께합니다.
+            </h1>
+            <div class="ani__button bannerbtn">
+              <div class="text__ani2 link__box">
+                <div>자세히 보기</div>
+                <div class="duplicatebtn">자세히 보기</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/배너4.png" alt="" class="banner__img3" />
+            <div class="blur"></div>
+            <h1 class="swiper__text">
+              안전한 관리, 균형 잡힌 식단 <br />한샘푸드가 함께합니다.
+            </h1>
+            <div class="ani__button bannerbtn">
+              <div class="text__ani2 link__box">
+                <div>자세히 보기</div>
+                <div class="duplicatebtn">자세히 보기</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/img/배너3.png" alt="" class="banner__img4" />
+            <div class="blur"></div>
+            <h1 class="swiper__text">
+              안전한 관리, 균형 잡힌 식단 <br />한샘푸드가 함께합니다.
+            </h1>
+            <div class="ani__button bannerbtn">
+              <div class="text__ani2 link__box">
+                <div>자세히 보기</div>
+                <div class="duplicatebtn">자세히 보기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <!-- If we need navigation buttons -->
+        <button class="next swiperbutton"><i class="fa-solid fa-arrow-right"></i></button>
+        <button class="prev swiperbutton"><i class="fa-solid fa-arrow-left"></i></button>
+      </div>
+    </section>
+
+    <section class="food">
+      <div class="text__layout1">
+        <h1 class="food__text__top food__text">한샘푸드는</h1>
+        <div class="img__food">
+          <img src="/img/carrot.png" alt="" class="img__carrot" />
+        </div>
+      </div>
+
+      <div class="text__layout2">
+        <h1 class="food__text__mid1 food__text">자연이</h1>
+        <div class="img__food">
+          <img src="/img/leaf.png" alt="" class="img__leaf" />
+        </div>
+        <h1 class="food__text__mid2 food__text">담긴 건강하고</h1>
+      </div>
+
+      <div class="text__layout3">
+        <h1 class="foot__text__bottom1 food__text">맛있는 식사를</h1>
+        <div class="img__food">
+          <img src="/img/egg.png" alt="" class="img__egg" />
+        </div>
+        <h1 class="foot__text__bottom2 food__text">제공합니다.</h1>
+      </div>
+
+      <i class="fa-solid fa-asterisk big__star star__green star1"></i>
+      <i class="fa-solid fa-star-of-life small__star star__green star2"></i>
+
+      <i class="fa-solid fa-asterisk big__star star__orange star3"></i>
+      <i class="fa-solid fa-star-of-life small__star star__orange star4"></i>
+
+      <i class="fa-solid fa-asterisk big__star star__yellow star5"></i>
+      <i class="fa-solid fa-star-of-life small__star star__yellow star6"></i>
+    </section>
+    <section class="service">
+      <div class="service__wrap">
+        <div class="text__wrap">
+          <div class="img__sprout">
+            <img src="/img/title_obj_01.svg" alt="" />
+          </div>
+          <h2>
+            한샘푸드의<br />
+            서비스를 만나보세요!
+          </h2>
+        </div>
+        <div class="content__wrap">
+          <a href="" class="service__card card__green">
+            <div class="card__textTop">위탁급식시스템</div>
+            <h1 class="card__text">
+              급식업무 일체를 위임받아<br />체계적으로 운영하는 전문 급식 서비스
+            </h1>
+            <div class="card__img"><img src="/img/service1.png" alt="" /></div>
+          </a>
+          <a href="" class="service__card card__pink">
+            <div class="card__textTop">위탁급식시스템</div>
+            <h1 class="card__text">찾아가는 구내식당<br />한샘푸드 이동급식</h1>
+            <div class="card__img"><img src="/img/service2.png" alt="" /></div>
+          </a>
+          <a href="" class="service__card card__yellow">
+            <div class="card__textTop">신선한 쌈채소</div>
+            <h1 class="card__text">
+              급식업무 일체를 위임받아<br />체계적으로 운영하는 전문 급식 서비스
+            </h1>
+            <div class="card__img"><img src="/img/service3.png" alt="" /></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="spring">
+      <div class="spring__bigcard">
+        <img src="/img/spring.png" alt="" />
+
+        <div class="spring__card">
+          <img src="/img/bom_logo.svg" alt="" />
+          <div class="spring__text">너와봄은 우렁쌈밥 전문점으로,</div>
+          <div class="spring__text">
+            10여 가지 신선한 쌈 채소와 다양한 반찬을 제공하여
+          </div>
+          <div class="spring__text">건강하고 맛있는 한끼를 제공합니다.</div>
+
+          <div class="ani__button springbtn">
+            <div class="text__ani2 link__box">
+              <div>자세히 보기</div>
+              <div class="duplicatebtn">자세히 보기</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numberFood">
+      <div class="numberFood__Wrap">
+        <img src="/img/title_obj_02.svg" alt="" />
+
+        <div class="numberFood__mainText">숫자로 보는 한샘푸드</div>
+
+        <div class="numberFood__card">
+          <div class="numberFood__card__left">
+            <div class="numberFood__card__TopText">200+</div>
+
+            <div class="numberFood__card__bottomText">
+              200여 가지의 메뉴 개발로<br />메뉴의 다양함을 추구
+            </div>
+            <div class="numberFood__cardlayout">
+              <div class="numberFood__cardlayout1">
+                <img
+                  src="/img/card1.png"
+                  alt=""
+                  class="cardLeft__img1 cardLeft__img"
+                />
+                <img
+                  src="/img/card2.png"
+                  alt=""
+                  class="cardLeft__img2 cardLeft__img"
+                />
+                <img
+                  src="/img/card3.png"
+                  alt=""
+                  class="cardLeft__img3 cardLeft__img"
+                />
+              </div>
+
+              <div class="numberFood__cardlayout2">
+                <img
+                  src="/img/card4.png"
+                  alt=""
+                  class="cardLeft__img4 cardLeft__img"
+                />
+                <img
+                  src="/img/card5.png"
+                  alt=""
+                  class="cardLeft__img5 cardLeft__img"
+                />
+                <img
+                  src="/img/card6.png"
+                  alt=""
+                  class="cardLeft__img6 cardLeft__img"
+                />
+              </div>
+
+              <div class="numberFood__cardlayout3">
+                <img
+                  src="/img/card7.png"
+                  alt=""
+                  class="cardLeft__img7 cardLeft__img"
+                />
+                <img
+                  src="/img/card8.png"
+                  alt=""
+                  class="cardLeft__img8 cardLeft__img"
+                />
+                <img
+                  src="/img/card9.png"
+                  alt=""
+                  class="cardLeft__img9 cardLeft__img"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="numberFood__card__right">
+            <div class="cardTop">
+              <div class="numberFood__card__TopText">1000+</div>
+
+              <div class="numberFood__card__bottomText">
+                최소 30명 ~ 1000명+ 까지<br />대상, 공간 제한 없이 서비스
+              </div>
+              <div class="peoplebox">
+                <div class="peopleLine">
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person1"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person2"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person3"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person4"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person5"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person6"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person7"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person8"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person9"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person10"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person11"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person12"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person13"
+                  />
+                  <img
+                    src="/img/about_obj_person (1).svg"
+                    alt=""
+                    class="person14"
+                  />
+                </div>
+                <div class="peopleLine2">
+                  <img src="/img/about_obj_person (1).svg" class="person20" />
+                  <img src="/img/about_obj_person (1).svg" class="person21" />
+                  <img src="/img/about_obj_person (1).svg" class="person22" />
+                  <img src="/img/about_obj_person (1).svg" class="person23" />
+                  <img src="/img/about_obj_person (1).svg" class="person24" />
+                  <img src="/img/about_obj_person (1).svg" class="person25" />
+                  <img src="/img/about_obj_person (1).svg" class="person26" />
+                  <img src="/img/about_obj_person (1).svg" class="person27" />
+                  <img src="/img/about_obj_person (1).svg" class="person28" />
+                  <img src="/img/about_obj_person (1).svg" class="person29" />
+                  <img src="/img/about_obj_person (1).svg" class="person30" />
+                  <img src="/img/about_obj_person (1).svg" class="person31" />
+                  <img src="/img/about_obj_person (1).svg" class="person32" />
+                  <img src="/img/about_obj_person (1).svg" class="person33" />
+                </div>
+              </div>
+
+              <div class="spoonImg">
+                <img src="/img/about_img_02.png" alt="" />
+              </div>
+            </div>
+
+            <div class="cardBottom">
+              <div class="numberFood__card__TopText">10+</div>
+
+              <div class="numberFood__card__bottomText">
+                10가지의 다양한 반찬 제공으로<br />한끼의 식사도 정성스럽게
+              </div>
+              <div class="foodTray">
+                <img src="/img/pan.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="confident">
+      <div class="confient__img">
+        <img src="/img/title_obj_04.svg" alt="" />
+      </div>
+      <div class="confient__text">한샘푸드는 자신 있습니다</div>
+
+      <div class="confident__cardwrap">
+        <div class="confident__card">
+          <img src="/img/pride_img_01.png" alt="cardcolor__green" />
+          <div class="confident__cardTag">신선한 식자재 사용</div>
+        </div>
+
+        <div class="confident__card">
+          <img src="/img/pride_img_02.png" alt="" />
+          <div class="confident__cardTag cardcolor__pink">
+            엄격한 위생 / 안전관리
+          </div>
+        </div>
+
+        <div class="confident__card">
+          <img src="/img/pride_img_03.png" alt="" />
+          <div class="confident__cardTag cardcolor__yellow">
+            고객 피드백 반영
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="imgSequence">
+      <div class="sequenceCard sequenceCard1">
+        <img src="/img/cook.jpg" alt="" class="page1img" />
+        <div class="page">PURPOSE 01</div>
+        <div class="sequenceCardText">
+          한샘푸드는 따뜻한 한끼를 위해<br />
+          진심을 담아 요리합니다
+        </div>
+        <img src="/img/purpose_icon01.svg" alt="" class="pageicon" />
+      </div>
+
+      <div class="sequenceCard sequenceCard2">
+        <img src="/img/당근.jpg" alt="" class="page1img"/>
+        <div class="page">PURPOSE 02</div>
+        <div class="sequenceCardText">
+          양질의 바른 먹거리는<br />
+          한샘푸드의 지향점입니다.
+        </div>
+        <img src="/img/purpose_icon02.svg" alt="" class="pageicon" />
+      </div>
+      <div class="sequenceCard sequenceCard3">
+        <div class="page">PURPOSE 03</div>
+        <div class="sequenceCardText">
+          꾸준함과 평정심으로<br />
+          음식의 맛을 지켜나갑니다
+        </div>
+        <img src="/img/purpose_icon03.svg" alt="" class="pageicon" />
+        <img src="/img/뷔페.jpg" alt="" class="page1img"/>
+      </div>
+
+    </section>
+
+    <section class="card__door">
+     <div class="card__doorWrap">
+
+      <div class="door__card left__doorcard">
+
+        <div class="card__box card__box__left">
+          <h1>이동급식 · 위탁급식</h1>
+          <p>회사의 경제적인 식단가를 고려하여<br>
+            합리적으로 상담 도와드리겠습니다.</p>
+          <a href class="ani__button">
+            <div class="text__ani2 link__box">
+              <div>급식문의하기</div>
+              <div class="duplicatebtn">급식문의하기</div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+      <div class="door__card right__doorcard">
+
+        <div class="card__box card__box__right">
+          <h1>너와 봄</h1>
+          <p>30여가지의 다양한 야채를 제공하는<br>
+            쌈밥 전문점으로써, 전 연령층의 대/소 모임에<br>
+            적합한 건강식 전문점입니다.</p>
+          <a href class="ani__button">
+            <div class="text__ani2 link__box">
+              <div>프랜차이즈 문의하기</div>
+              <div class="duplicatebtn">프랜차이즈 문의하기</div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+
+
+     
+     </div>
+
+    </section>
+   
+    <section class="multipleSwiper">  
+      <button class="next swiperbutton"><i class="fa-solid fa-arrow-right"></i></button>
+      <button class="prev swiperbutton"><i class="fa-solid fa-arrow-left"></i></button>
+    
+      <div class="swiperWrap">
+    
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+           
+              <div class="swiper-slide">
+                <img src="/img/swiper1.png" alt="" class="banner__img4" />
+                
+              </div>
+            
+              <div class="swiper-slide">
+              <img src="/img/swiper2.png" alt="" class="banner__img4" />
+              
+            </div>
+  
+            <div class="swiper-slide">
+              <img src="/img/swiper3.png" alt="" class="banner__img4" />
+              
+            </div>
+  
+            <div class="swiper-slide">
+              <img src="/img/swiper4.png" alt="" class="banner__img4" />
+            </div>
+            </div>
+          <!-- If we need pagination -->
+          <!-- If we need navigation buttons -->
+        
+        </div>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+           
+              <div class="swiper-slide">
+                <img src="/img/swiper2.png" alt="" class="banner__img4" />
+                
+              </div>
+            
+              <div class="swiper-slide">
+              <img src="/img/swiper3.png" alt="" class="banner__img4" />
+              
+            </div>
+  
+            <div class="swiper-slide">
+              <img src="/img/swiper4.png" alt="" class="banner__img4" />
+              
+            </div>
+  
+            <div class="swiper-slide">
+              <img src="/img/swiper1.png" alt="" class="banner__img4" />
+              </div>
+            </div>
+          <!-- If we need pagination -->
+          <!-- If we need navigation buttons -->
+        
+        </div>
+       <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            
+              <img src="/img/swiper3.png" alt="" class="banner__img4" />
+              <div class="blur1"></div>
+              <p class="swiper__text1">
+              정기적으로 새로운 메뉴를 도입하여 직원들이 항상 새로운 <br>
+              음식을 경험할 수 있습니다. 이런 점이 직원들 사이에서 <br>
+              긍정적인 반응을 얻고 있습니다.
+              </p>
+              <p CLASS="swiper__text2"  >안산의 교육기관</p>
+            
+          </div>
+   
+            <div class="swiper-slide">
+              <img src="/img/swiper4.png" alt="" class="banner__img4" />
+              <div class="blur1"></div>
+              <p class="swiper__text1">
+              정기적으로 새로운 메뉴를 도입하여 직원들이 항상 새로운 <br>
+              음식을 경험할 수 있습니다. 이런 점이 직원들 사이에서 <br>
+              긍정적인 반응을 얻고 있습니다.
+              </p>
+              <p CLASS="swiper__text2"  >안산의 교육기관</p>
+         
+            </div>
+
+          <div class="swiper-slide">
+         
+              <img src="/img/swiper1.png" alt="" class="banner__img4" />
+              <div class="blur1"></div>
+              <p class="swiper__text1">
+              정기적으로 새로운 메뉴를 도입하여 직원들이 항상 새로운 <br>
+              음식을 경험할 수 있습니다. 이런 점이 직원들 사이에서 <br>
+              긍정적인 반응을 얻고 있습니다.
+              </p>
+              <p CLASS="swiper__text2"  >안산의 교육기관</p>
+        
+          
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/swiper2.png" alt="" class="banner__img4" />
+            <div class="blur1"></div>
+            <p class="swiper__text1">
+            정기적으로 새로운 메뉴를 도입하여 직원들이 항상 새로운 <br>
+            음식을 경험할 수 있습니다. 이런 점이 직원들 사이에서 <br>
+            긍정적인 반응을 얻고 있습니다.
+            </p>
+            <p CLASS="swiper__text2"  >안산의 교육기관</p>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <!-- If we need navigation buttons -->
+       
+      </div>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+         
+            <div class="swiper-slide">
+              <img src="/img/swiper4.png" alt="" class="banner__img4" />
+              
+            </div>
+          
+            <div class="swiper-slide">
+            <img src="/img/swiper1.png" alt="" class="banner__img4" />
+            
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/swiper2.png" alt="" class="banner__img4" />
+            
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/swiper3.png" alt="" class="banner__img4" />
+            
+          </div>
+        <!-- If we need pagination -->
+        <!-- If we need navigation buttons -->
+      
+      </div>
+
+      
+      
+      </div>
+
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+             
+            <div class="swiper-slide">
+              <img src="/img/swiper1.png" alt="" class="banner__img4" />
+              
+            </div>
+          
+           <div class="swiper-slide">
+            <img src="/img/swiper2.png" alt="" class="banner__img4" />
+            
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/swiper3.png" alt="" class="banner__img4" />
+            
+          </div>
+
+          <div class="swiper-slide">
+            <img src="/img/swiper4.png" alt="" class="banner__img4" />
+            
+          </div>
+        <!-- If we need pagination -->
+        <!-- If we need navigation buttons -->
+      
+      </div>
+
+      
+    
+    </div>  
+    <div class="contentWrap">
+      <img src="/img/title_obj_03.svg" alt="">
+      <h1>한샘푸드와 <br>고객의 만남
+      </h1>
+    </div>
+    
+  </div>
+  
+   </div>
+    </section>  
+    <footer>
+    <div class="footerWrap">
+      <div class="footerLeft">
+        
+          <div class="toplayout">
+
+            <div class="leftTop">
+              <h1>한샘푸드와 함께 <br>
+                건강한 식단을 만나보세요
+              </h1>
+              <a href class="ani__button">
+                <div class="text__ani2 link__box">
+                  <div> 문의하기</div>
+                  <div class="duplicatebtn">문의하기</div>
+                </div>
+              </a>
+            </div>
+
+
+            <div class="rightTop">
+              <ul class="ulLeft">
+                <li class="lifirst">주소</li>
+                <li>전화번호</li>
+                <li>회사명</li>
+                <li>대표</li>
+
+              </ul>
+
+              <ul class="ulright">
+                <li class="lifirst1">경기도 안양시 만안구 덕천로152번길 25, 2층<br>
+                   252,253호(안양동, 안양아이에스BIZ타워센트럴) </li>
+                <li>032.716.6654</li>
+                <li>주식회사 한샘푸드</li>
+                <li>김철</li>
+
+              </ul>
+            </div>
+          </div>
+
+          
+
+          <div class="bottomText"> 
+           <p class="bottom__p">COPYRIGHT © 2024 한샘푸드.  ALL RIGHTS RESERVED. <br>
+            Website by 비쥬얼스토리</p>
+           
+              <div>개인정보처리방침</div>
+         
+            </div>
+          </div>
+      
+      </div>
+
+
+      <div class="footerRight"></div>
+    </div>
+    </footer>
+
+
+
+    
+  </body>
+</html>
+

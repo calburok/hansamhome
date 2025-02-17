@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf)
+      format("truetype");
+}
+
+* {
+  font-family: "NanumSquareNeo";
+}
+
+body {
+  background-color: var(--light-begie);
+}
+header {
+  width: 100%;
+  height: var(--headerH);
+  position: fixed;
+  transition: all 0.5s;
+  border-radius: 0px 0px 30px 30px;
+  z-index: 1001;
+}
+
+.add__opacity {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+nav {
+  width: 90%;
+  max-width: var(--nav-max-w);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ani__button {
+  display: flex;
+  width: 140px;
+  height: 50px;
+  font-weight: 800;
+  background-color: var(--main-color);
+  border-radius: var(--radius-100);
+  color: var(--light-begie);
+  
+  padding: 0 30px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.nav__logo {
+  width: 128px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.nav__logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gnb__wrab {
+  height: 100%;
+}
+
+.gnb__box {
+  height: 100%;
+  display: flex;
+  gap: 70px;
+}
+
+.gnb {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--sub-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.text__ani {
+  position: relative;
+  padding: 1px 0px;
+  overflow: hidden;
+}
+
+.text__ani:hover > div {
+  transform: translateY(-30px);
+}
+
+.text__ani > div {
+  transition: 0.4s cubic-bezier(0.35, 1.5, 0.6, 1);
+}
+.duplicate {
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+.ani__button:hover {
+  transform: translateY(-3px);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.text__ani2 {
+  position: relative;
+  padding: 10px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text__ani2 > div {
+  transition: 0.4s cubic-bezier(0.35, 1.5, 0.6, 1);
+}
+.text__ani2:hover > div {
+  transform: translateY(-45px);
+}
+
+.duplicatebtn {
+  position: absolute;
+  left: 0;
+  top: 55px;
+}
+.a {
+  font-size: 100px;
+  text-align: center;
+}

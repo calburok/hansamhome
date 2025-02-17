@@ -1,0 +1,178 @@
+var filter = "win16|win32|win64|mac|macintel";
+var mobileIs = false;
+
+if (navigator.platform) {
+	if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+		mobileIs = true;
+	}
+}
+
+let win_w;
+let win_h;
+let win_sct;
+let doc_sct;
+let nvh;
+
+var scrollY = 0;
+var lastScrollTop = 0;
+
+function setScreenSize() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	nvh = vh * 100;
+}
+/*window.addEventListener('resize', setScreenSize);
+setScreenSize();*/
+window.addEventListener("resize", function(){
+	setScreenSize()
+});
+setScreenSize();
+
+$(document).ready(function () {
+
+});
+
+
+$(window).on("load", function () {
+
+	//공통 적용	
+});
+
+
+$(function () {
+
+	function init(){
+
+		AOS.init();
+		sitemapSet();
+		scrollChk();
+		
+	} init();
+
+	var $header = $("header");
+	var $gnbWrap = $header.find(".gnb-wrap");
+	var $gnbBox = $gnbWrap.find(".gnb-box");
+	var $gnb = $gnbBox.find(".gnb");
+	var $snbWrap = $gnb.find(".snb-wrap");
+	let $quick = $('.quick-menu');
+
+
+	$gnb.on("mouseenter", function(){
+		var $thisSnbWrap = $(this).find(".snb-wrap");
+		if($thisSnbWrap.length){
+			$snbWrap.not($thisSnbWrap).removeClass("active");
+			$thisSnbWrap.addClass("active");
+		}else{
+			$snbWrap.removeClass("active");
+		}
+	});
+
+	$gnbBox.on("mouseleave", function(){
+		$snbWrap.removeClass("active");
+	});
+
+
+	var $sitemapBtn = $(".btn-sitemap");
+	$sitemapBtn.on("click", function(){
+		$(".sitemap").addClass("active");
+	});
+
+	$(document).on("click", ".btn-sitemap-close", function(){
+		$(".sitemap").removeClass("active");
+		$(".btn-gnb-link").removeClass("active");
+		$(".sitemap .snb-wrap").slideUp();
+	});
+
+	$(document).on("click", ".btn-gnb-link", function(){
+		$(this).toggleClass("active");
+		var $thisSnbWrap = $(this).parents(".gnb").find(".snb-wrap");
+
+		if($(this).hasClass("active")){
+			$(".sitemap .snb-wrap").not($thisSnbWrap).slideUp();
+			$thisSnbWrap.slideDown();
+		}else{
+			 $thisSnbWrap.slideUp();
+		}
+	});
+
+	$(document).on("click", ".quick-menu .top", function(){
+		window.scrollTo({top:0, behavior:"instant"});
+	});
+
+
+	$(window).resize(function(){
+		if($gnbWrap.css("display") != "none"){
+			$(".sitemap").removeClass("active");
+			$(".btn-gnb-link").removeClass("active");
+			$(".sitemap .snb-wrap").slideUp();
+		}
+		scrollChk();
+	});
+
+	$(window).on("scroll", function(){
+		AOS.init();
+	});
+
+
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 50){
+			$header.addClass("fix");
+		}else{
+			$header.removeClass("fix");
+		}
+
+		if($(document).scrollTop() > 100){
+			$quick.removeClass('hide');
+		} else {
+			$quick.addClass('hide');
+		}
+	});
+
+
+});
+
+
+
+function window_info() {
+	win_w = $(window).width();
+	win_h = $(window).height();
+	win_sct = $(window).scrollTop();
+	doc_sct = $(document).scrollTop();
+}
+
+
+function sitemapSet(){
+	var html = "";
+	var $gnbWrap = $("header .gnb-wrap").clone();
+	var $btnContact = $("header .btn-contact").clone();
+
+	html += "<div class='sitemap'>\n";
+	html += "	<div class='sitemap-bg'></div>\n";
+	html += "	<div class='sitemap-wrap'>\n";
+	html += "		<div class='sitemap-box'>\n";
+	html += "			<div class='wrap'>\n";
+	html += "				<button class='btn-sitemap-close'>close</button>\n";
+	html += "				<div class='sitemap-conts'>\n";
+	html += "				</div>\n";
+	html += "			</div>\n";
+	html += "		</div>\n";
+	html += "	</div>\n";
+	html += "</div>\n";
+
+	$("header").after(html);
+	$(".sitemap .sitemap-conts").append($gnbWrap);
+	$(".sitemap .sitemap-conts").append($btnContact);
+	$(".sitemap .sitemap-conts .gnb").each(function(){
+		if($(this).find(".snb-wrap").length){
+			$(this).children("a.gnb-link").contents(".link-box").unwrap().wrap("<button class='gnb-link txt-ani btn-gnb-link'></button>");
+		}
+	});
+	$btnContact.wrap("<div class='button-wrap'></div>");
+
+}
+
+function scrollChk(){
+	if(document.body.scrollHeight < 1500 && document.body.scrollHeight - window.innerHeight < 500){
+		$('.quick-menu').css('display','none');
+	}
+}

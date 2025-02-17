@@ -1,0 +1,137 @@
+.multipleSwiper {
+ position: relative;
+ margin-bottom: 300PX;
+}
+
+
+
+.swiperWrap {
+ 
+
+ max-width: 1920PX;
+ width: 100%;
+  display: flex;
+  gap: 80px;
+ margin: 0 auto;
+ position: relative;
+ justify-content: space-between;
+}
+
+.swiper__text1 {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: white;
+  line-height: 35px;
+font-weight: 500;
+  font-size: 20px;
+}
+
+
+
+.swiper__text2 {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  color: white;
+  line-height: 35px;
+  font-size: 18px;
+}
+
+.blur1 {
+ 
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.swiperWrap > .swiper:nth-child(1) {
+  width: 357px;
+position: absolute;
+
+left: -200px;
+}
+
+.swiperWrap > .swiper:nth-child(2) {
+  width: 357px;
+  position: absolute;
+  bottom: -50px;
+  left: 240PX;
+}
+
+.swiperWrap > .swiper:nth-child(3) {
+  width: 560px;
+position: relative;
+
+}
+
+.swiperWrap > .swiper:nth-child(4) {
+  width: 357px;
+  position: absolute;
+  right: 240PX;
+  top: -50px;
+}
+
+.swiperWrap > .swiper:nth-child(5) {
+  width: 357px;
+position: absolute;
+bottom: 0;
+right: -200px;
+}
+
+@font-face {
+  font-family: "NanumSquareNeoExtraBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+      format("truetype");
+}
+
+.contentWrap {
+  position: absolute;
+
+  top:0;
+ line-height: 55px;
+  left: 240px;
+  z-index: 100;
+
+  color: var(--main-color);
+}
+.contentWrap > h1 {
+  font-family: "NanumSquareNeoExtraBold";
+  font-weight: 900;
+  font-size: 40px;
+}
+
+
+
+.multipleSwiper  > .next {
+  position: absolute;
+right: 350px;
+padding: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #F8E6C3;
+color: var(--main-color);
+}
+
+.multipleSwiper > .prev {
+position: absolute;
+left: 1450px;
+padding: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #F8E6C3;
+color: var(--main-color);
+ 
+}

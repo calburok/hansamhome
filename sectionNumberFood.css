@@ -1,0 +1,290 @@
+.numberFood__Wrap {
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.numberFood {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 180px;
+}
+.numberFood__card {
+  display: flex;
+  gap: 20px;
+}
+.numberFood__card__left {
+  height: 840px;
+
+  width: 520px;
+
+  background-color: #ffdf6f;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--gap-40);
+  color: var(--sub-color);
+}
+
+.numberFood__card__left:hover
+  > .numberFood__cardlayout
+  > .numberFood__cardlayout1 {
+  transform: translate(0px, -100px);
+}
+
+.numberFood__card__left:hover
+  > .numberFood__cardlayout
+  > .numberFood__cardlayout2 {
+  transform: translate(0px, 100px);
+}
+
+.numberFood__card__left:hover
+  > .numberFood__cardlayout
+  > .numberFood__cardlayout3 {
+  transform: translate(0px, -100px);
+}
+
+.numberFood__card__right {
+  width: 520px;
+
+  height: 840px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@font-face {
+  font-family: "NanumSquareNeoExtraBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+      format("truetype");
+}
+
+.numberFood__mainText {
+  font-family: "NanumSquareNeoExtraBold";
+  font-size: var(--font-40);
+  color: var(--main-color);
+  margin-bottom: 60px;
+}
+.numberFood__card__TopText {
+  padding: 42px 48px;
+  font-size: 64px;
+  font-family: "NanumSquareNeoExtraBold";
+}
+
+.numberFood__card__bottomText {
+  padding: 0px 48px;
+  font-size: var(--font-20);
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.numberFood__cardlayout {
+  display: flex;
+  gap: 30px;
+  margin-top: 150px;
+  transform: rotate(-10deg);
+  position: relative;
+}
+
+.numberFood__cardlayout1 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  left: 380px;
+  bottom: -150px;
+  transition: all 0.5s;
+  margin-bottom: 100px;
+}
+
+.numberFood__cardlayout2 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  left: 190px;
+  bottom: 70px;
+  transition: all 0.5s;
+}
+
+.numberFood__cardlayout3 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: all 0.5s;
+}
+
+.cardLeft__img {
+  border-radius: var(--font-26);
+}
+
+.cardTop {
+  width: 100%;
+  height: calc((100% - var(--gap-40)) / 2);
+  border-radius: var(--gap-40);
+  background-color: #c8d98e;
+  color: var(--main-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.cardBottom {
+  width: 100%;
+  height: calc((100% - var(--gap-40)) / 2);
+  border-radius: var(--gap-40);
+  background-color: #ffb289;
+  color: var(--sub-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBottom:hover > .foodTray {
+  transform: translateY(-20px);
+}
+.spoonImg {
+  position: absolute;
+  top: 150px;
+  left: -50px;
+}
+
+.peoplebox {
+  position: absolute;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  left: 40px;
+  bottom: 40px;
+}
+
+.peopleLine {
+  display: flex;
+  gap: 15px;
+}
+.peopleLine2 {
+  display: flex;
+  gap: 15px;
+}
+
+.person1 {
+  opacity: 0;
+}
+.person2 {
+  opacity: 0;
+}
+.person3 {
+  opacity: 0;
+}
+.person4 {
+  opacity: 0;
+}
+.person5 {
+  opacity: 0;
+}
+.person6 {
+  opacity: 0;
+}
+.person7 {
+  opacity: 0;
+}
+.person8 {
+  opacity: 0;
+}
+.person9 {
+  opacity: 0;
+}
+.person10 {
+  opacity: 0;
+}
+.person11 {
+  opacity: 0;
+}
+.person12 {
+  opacity: 0;
+}
+.person13 {
+  opacity: 0;
+}
+.person11 {
+  opacity: 0;
+}
+.person12 {
+  opacity: 0;
+}
+.person13 {
+  opacity: 0;
+}
+.person14 {
+  opacity: 0;
+}
+
+.person20 {
+  opacity: 0;
+}
+.person21 {
+  opacity: 0;
+}
+.person22 {
+  opacity: 0;
+}
+.person23 {
+  opacity: 0;
+}
+.person24 {
+  opacity: 0;
+}
+.person25 {
+  opacity: 0;
+}
+.person26 {
+  opacity: 0;
+}
+.person27 {
+  opacity: 0;
+}
+.person28 {
+  opacity: 0;
+}
+.person29 {
+  opacity: 0;
+}
+.person30 {
+  opacity: 0;
+}
+.person31 {
+  opacity: 0;
+}
+.person32 {
+  opacity: 0;
+}
+.person33 {
+  opacity: 0;
+}
+.person34 {
+  opacity: 0;
+}
+
+.peopleLine > img {
+  width: 18px;
+}
+
+.peopleLine2 > img {
+  width: 18px;
+}
+
+.foodTray {
+  position: absolute;
+  left: 100px;
+  top: 250px;
+  transition: all 0.5s;
+}
