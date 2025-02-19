@@ -149,7 +149,7 @@
 }
 
 .cardBottom:hover > .foodTray {
-  transform: translateY(-20px);
+  transform: translateY(-25px);
 }
 .spoonImg {
   position: absolute;
@@ -286,5 +286,5 @@
   position: absolute;
   left: 100px;
   top: 250px;
-  transition: all 0.5s;
+  transition: all 0.35s;
 }

@@ -52,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger);
 const TL = gsap.timeline({
   scrollTrigger: {
     trigger: ".swiper",
-    start: "bottom top",
+    start: "85% top",
     markers: true,
     speed: 1000,
   },

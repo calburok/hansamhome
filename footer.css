@@ -7,6 +7,7 @@ footer {
 .footerWrap {
   width: 100%;
   display: flex;
+  gap: 40PX;
 
 }
 
@@ -65,27 +66,76 @@ footer {
 }
 .leftTop> .ani__button  {
   margin: -50px 50px 80px 50px;
+  width: 120px;
  }
 .bottomText > div{
 font-weight: 900;
 color: var(--main-color);
 }
+@font-face {
+  font-family: "NanumSquareNeoExtraBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+  format("embedded-opentype"),
+  url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+  format("woff"),
+  url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+  format("truetype");
+}
+
+.lifirst {
+  margin: 50px 0px 32px 0px;
+}
+.lifirst1 {
+  margin: 47px 0px 6px 0px;
+  line-height: 22px;
+}
+
 .ulLeft {
   display: flex;
   flex-direction: column;
   gap: 15px;
   font-weight: 900;
+  font-family: "NanumSquareNeoExtraBold";
 }
-
-.lifirst {
-margin: 50px 0px 30px 0px;
-}
-.lifirst1 {
-  margin: 50px 0px 13px 0px;
-  }
+  
 .ulright {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-weight: 700;
+  font-weight: 600;
 } 
+.footerRight {
+  width: 100%;
+background-color: white;
+}
+
+.RightWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  padding: 40PX 56PX;
+ 
+}
+
+.RightWrap > IMG {
+  width: 125PX;
+  margin-bottom: 60PX;
+}
+
+.RightWrap > h1 {font-family: "NanumSquareNeoExtraBold";
+  margin: 20px 0px;
+}
+
+.RightWrap > h2 {font-family: "NanumSquareNeoExtraBold";
+  margin: 40px 0px 20px 0px;
+}
+
+p {
+  
+}
+.opentime {
+  line-height: 30px;
+  margin: 20px 0px 0px 0px;
+}
